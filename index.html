@@ -84,7 +84,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                font-size: 18px;
+                font-size: 15px;
             }
 
             .close-icon {
@@ -217,12 +217,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div>Willkommen bei EuroManial Handynummer</div>
-                    <span class="close-icon" onclick="closeSignUp()">×</span> <!-- Close Button -->
+                    <span class="close-icon" onclick="closeSignUp()"><img src="images/close.png" alt=""></span> <!-- Close Button -->
                 </div>
                 <div class="modal-body">
                     <form id="signUpForm" onsubmit="submitSignUp(event)">
                         <label for="phone">Handynummer</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 (151) 12345678" required>
 
                         <label for="dob">Warn hast du Geburtstag</label>
                         <input type="date" id="dob" name="dob" required>
@@ -385,7 +385,7 @@
                         <img src="images/offer_de.webp" class="offer">
 
                         <div class="buttons">
-                            <a href="Javascript:openAuth();void(0);">
+                            <a href="Javascript:openAuth();void(0);" onclick="openSignUp()">
                                 <img src="images/instant_play_de.webp" class="instant">
                             </a>
                         </div>
@@ -417,7 +417,7 @@
                             <img src="images/daily_picks_de.webp">
 
                             <h3>Angebote des Tages</h3>
-                            <a href="#">WEITERE INFOS ANZEIGEN</a>
+                            <a  href="Javascript:openAuth();void(0);" onclick="openSignUp()">WEITERE INFOS ANZEIGEN</a>
                         </div>
 
 
@@ -425,7 +425,7 @@
                             <img src="images/vip-lounge.webp">
 
                             <h3>VIP-Lounge</h3>
-                            <a href="#">WEITERE INFOS ANZEIGEN</a>
+                            <a  href="Javascript:openAuth();void(0);" onclick="openSignUp()">WEITERE INFOS ANZEIGEN</a>
                         </div>
 
 
@@ -433,7 +433,7 @@
                             <img src="images/new-games.jpg">
 
                             <h3>NEUE SPIELE</h3>
-                            <a href="#">WEITERE INFOS ANZEIGEN</a>
+                            <a  href="Javascript:openAuth();void(0);" onclick="openSignUp()">WEITERE INFOS ANZEIGEN</a>
                         </div>
                     </div>
                 </div>
