@@ -1,432 +1,249 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script id="son-webcomponents">
-        (function(w, d){
-            function loadScript(){
-                var f=d.getElementsByTagName('script')[0],
-                j=d.createElement('script');
-                j.type = 'module';
-                j.src = 'https://service.image-tech-storage.com/workers/webcomponents.9c92da91.js';
-                f.parentNode.insertBefore(j, f);
-            }
-            if('requestIdleCallback' in window){
-                var webcomponentsRequestIdleCallback = requestIdleCallback(loadScript, { timeout: 10000 });
-            }else{
-                loadScript()
-            }
-        })(window, document);
-        </script><script id="son-config">
-        	var sonDeepFreeze = function(obj){
-			    Object.keys(obj).forEach(function(property){
-			      	if ((typeof obj[property] === "object" || Array.isArray(obj[property])) && !Object.isFrozen(obj[property])){
-			      		sonDeepFreeze(obj[property]);
-			      	} 
-			    });
-			    return Object.freeze(obj);
-		  	};
-			Object.defineProperty(window, 'SON_CONFIG', {
-				value: sonDeepFreeze({"skin":"EuroMania.dl","displayName":"EuroMania","license":"DL","family":"EuroMania","abbrev":"em-dl","cookie_consent":true,"gtm":null,"gtm_layername":"dataLayer","locale":"DE","lang":"de","lang_id":8,"gth_lang_id":8,"segments":["de","de-DE","de-de"],"affiliate":"house_nond","dynid":"no_zone","zoneid":"house","currency":{"currency_id":2,"code":"EUR","symbol":"€","symbol_place":"before","country":"*","rate":1,"currency_separator":",","currency_decimal":"."},"apps":{"enabled":true,"ios":{"id":null,"available":false,"team_id":"DA8PHQG532","bundle_id":"com.euromania.skillonnet","aths":false,"url":""},"android":{"available":false,"id":"com.euromania.www","ais":false,"aths":false,"url":""}},"analytics":false,"registration_token":"ac0a84df-931c-4620-a0f1-15a98d2df7a8","client_type":"subdomain","support_email":"","interstitial":false,"registeredUser":false,"pnp":{"enabled":false,"payments":[],"pnp_payments_extra":false},"restrictions":true,"domain":"euromanias.de","cta":{"url":["https://www.playuzu.mx/mx","https://www.drueckglueck.com/de/","https://www.playuzu.mx/specials/uzuvip-new","https://www.luckyniki.de/vip/vip-punkte/","https://www.luckyniki.de/niki/social/","https://www.playuzu.com/cl/juegos/","https://www.playuzu.com/juegos/","https://www.playuzu.mx/juegos/","https://www.playuzu.com/pe/juegos/","https://www.playuzu.es/juegos/"]},"country_name":"FRANCE","device":"desktop","isMobile":false,"os":"Windows","browser":"Chrome","origin":"https://www.euromanias.de","resources":"https://service.image-tech-storage.com/workers","isDev":false,"country":"FR","regionCode":"","city":"","sub":"www","tld":"de","webcomponents":"https://service.image-tech-storage.com/workers/webcomponents.9c92da91.js"}),
-				writable: false
-			});
-		</script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="google" content="notranslate"/>
-    <script src="js/main-ntv5Mj-4.js"></script>
-    <style type="text/css">
-        .loader-wrapper{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            z-index: 99999;
-            pointer-events: none;
-        }
-        .loader-wrapper, body {
-            background: #0f6beb;
-            overflow: hidden;
-        }
-        html.mobile body,
-        html.mobile .loader-wrapper{
-            background-color: #294eaa;
-        }
-    </style>
-    <title>Startseite - Euromanias.de</title>
-    <meta name="description" content="Startseite - Euromanias.de - EuroMania.de"/>
-            <meta name="robots" content="noindex" />
-        <link rel="shortcut icon" href="https://aws-origin.image-tech-storage.com/euromanias.de/favicon.ico?v=1720428655">
-    
-<!-- MANIFEST -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
 
-
+        <script src="js/main-ntv5Mj-4.js"></script>
+        <script src="js/modules.min.js"></script>
+        <script src="js/index.3a2e1388.js"></script>
+        <link rel="stylesheet" href="css/app.min.css">
     
-    <link rel="modulepreload" as="script" href="https://service.image-tech-storage.com/workers/webcomponents.9c92da91.js"><link rel="ais" href="https://aws-origin.image-tech-storage.com/euromanias.de/images/logo_de.png">
-<style id="ais">
-:root{
-    --ais-gb: linear-gradient(#2c3e8a, #2b3d88);
-    --ais-logo-height: 28.2vw;
-    --ais-curve-bg: #fdfdfd;
-    --ais-browser-text-color: #46c0ff;
-    --ais-dismiss-text-color: #7e7e7e;
-    --ais-nav-bg: #2c3e8a;
-    --ais-nav-menu-color: #fff;
-    --ais-nav-btn-color: #fff;
-    --ais-nav-btn-bg: #017a09;
-}
-</style><script id="son-sw">
-                        if ('serviceWorker' in navigator) {
-                            navigator.serviceWorker.register('/son-sw.js').then(function(registration) {
-                                console.log('SkillOnNet Service worker registration succeeded');
-                            }).catch(function(error) {
-                                console.log('SkillOnNet Service worker registration failed', error);
-                            });
-                        }
-                    </script><link rel="manifest" href="/manifest.webmanifest">
-		        	
-		        	<script id="son-scripts">
-                        var SON_PROMPT = null;
-						window.addEventListener('beforeinstallprompt', function(event){
-						    event.preventDefault();
-						    SON_PROMPT = event
-						});
-					</script></head>
+        <title>Startseite - Euromanias</title>
+
+        <style>
+            *,
+            *::before,
+            *::after {
+            box-sizing: border-box;
+            }
+            a {
+                color: var(--beam-link-color, #fff);
+                text-decoration: underline;
+            }
+
+            a:hover {
+                color: var(--beam-link-color-hover, #fff);
+                -webkit-text-decoration: var(--beam-link-decoration-hover, none);
+                text-decoration: var(--beam-link-decoration-hover, none);
+            }
+
+            a:not([href]):not([class]),
+            a:not([href]):not([class]):hover {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            img {
+                vertical-align: middle;
+                border-style: none;
+            }
+
+            .dl-beam {
+                position: var(--beam-position, sticky);
+                z-index: var(--beam-index, 999);
+                top: 0;
+                left: 0;
+                width: 100%;
+                color: var(--beam-color, #fff);
+                font-size: var(--beam-font-size, 16px);
+                font-family: var(--beam-font-family, inherit);
+                background: var(--beam-background, #000);
+                padding: var(--beam-padding, 5px);
+            }
+
+            .dl-beam .container,
+            .dl-beam .inner-container {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .dl-beam .container {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .dl-beam .text {
+                line-height: 1;
+                margin: 0 5px;
+            }
+
+            .dl-beam img {
+                display: block;
+            }
+
+            .dl-beam .flag-icon {
+                height: 25px;
+            }
+            
+            body{
+                background-image: url('./images/background_BOD_de.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: auto;
+                position: relative;
+                z-index: 1;
+                padding: 0px 0px 30px 0px;
+            }
+        </style>
+    </head>
  
-<body class="de home" ng-controller="HomeController" ng-style="{'background':'#0f6beb url('+hero.banners[hero.active].creatives.desktop.url+') top center/cover no-repeat'}">
-            <son-android-popup></son-android-popup>
-    <div class="loader-wrapper"></div>
-            <div class="mobile-language-selector">
-            <ul>
-                            </ul>
-        </div>
-        <div sidebar is-open="sidebarOpen" options="sidebarOptios" style="display:none;">
-        <div class="sidebar">
-            <ul class="side-menu">
-                <li>
-                    <a class="not-active" href="/games/">Unsere Spiele</a>
-                </li>
-                                <li>
-                    <a class="not-active" href="/promotions/">Aktionen</a>
-                </li>
-                <li>
-                    <a class="not-active" href="/vip/vip-lounge/">VIP-Lounge</a>
-                </li>
-                                <li>
-                    <a class="not-active" href="/help/support/">Unterstützung</a>
-                </li>
-            </ul>
-                                                </div>
-    </div>
-<div class="header-wrapper">
-    <son-dl-beam></son-dl-beam>
-    <div class="header home">    
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-2 col-sm-4 col-lg-2">
-                    <a class="support d-none d-lg-block" href="/help/support/">
-                        <span class="green">24/7</span> Unterstützung                    </a>
+    
+    <body>
+	    <div class="header-wrapper">
+		    <div class="dl-beam">
+                <div class="container">
+                    <div class="inner-container">
+                        <slot name="age-icon">
+                            <img alt="germany_flag" src="https://service.image-tech-storage.com/workers/germany-flag.7e6efab3.png" class="flag-icon">
+                        </slot>
+                        <div class="text">Lizenziert in Deutschland</div>
+                    </div>
+                </div>
+			</div>
 
-                    <button class="navbar-toggler d-lg-none" type="button" ng-click="toggleSidebar()">
-                        <div class="navbar-toggler-wrapper">
-                            <i></i><i></i><i></i><i></i><i></i><i></i>
-                        </div>
-                    </button>
-                </div>
-                <div class="col-lg-3 justify-content-start d-none d-lg-flex">
-                                        <!-- <div class="dropdown currency-selector">
-                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-                            € EUR
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);">€ EUR</a>
-                            <a class="dropdown-item" href="javascript:void(0);">£ GBP</a>
-                            <a class="dropdown-item" href="javascript:void(0);">$ USD</a>
-                            <a class="dropdown-item" href="javascript:void(0);">$ CAD</a>
-                            <a class="dropdown-item" href="javascript:void(0);">$ AUD</a>
-                            <a class="dropdown-item" href="javascript:void(0);">ZAR</a>
-                            <a class="dropdown-item" href="javascript:void(0);">SEK</a>
-                            <a class="dropdown-item" href="javascript:void(0);">DKK</a>
-                            <a class="dropdown-item" href="javascript:void(0);">NOK</a>
-                            <a class="dropdown-item" href="javascript:void(0);">RUB</a>
-                        </div>
-                    </div> -->
-                                                    </div>
-                <div class="col-3 col-sm-3 col-lg-2">
-                    <a class="logo" href="/">
-                        <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/logo_de.png?v=1720428655"/>
-                    </a>
-                </div>
-                <div class="col-7 col-sm-5 col-lg-5 d-flex justify-content-end">
-                    <a href="javascript:openLogin();void(0);" class="nav-login">Anmelden</a>
-                    <a href="javascript:openRegistration();void(0);" class="nav-register">Mitmachen</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>        
-<section id="hero-space" class="hero-space">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div bootstrap-carousel no-pause="::hero.no_pause" active="hero.active" interval="hero.interval" class="hero-carousel carousel-fade"  template-url="/templates/carousel/carousel-no-control.html">
-                        <div carousel-slide slide="banner" ng-repeat="banner in hero.banners track by $index" index="$index" ng-if="::(banner.creatives.secondary.type == 'image')" class="carousel-item">
-                            <a banner-action="::(banner.ext_url || banner.action)">
-                                <img ng-src="{{::banner.creatives.secondary.url}}" class="caption-img">
+			<div class="header home">
+				<div class="container">
+					<div class="row align-items-center justify-content-between pl-4">
+						<div class="col-sm-4 col-lg-2">
+							<a class="support d-none d-lg-block" href="/help/support/">
+								<span class="green">24/7</span> Unterstützung                    
+							</a>
+						</div>
+
+						<div class="col-lg-3 justify-content-start d-none d-lg-flex"></div>
+
+						<div class="col-3 col-sm-3 col-lg-2">
+							<a class="logo" href="/">
+								<img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/logo_de.png?v=1720428655"/>
+							</a>
+						</div>
+
+						<div class="col-7 col-sm-5 col-lg-5 d-flex justify-content-end">
+							<a href="javascript:openLogin();void(0);" class="nav-login">Anmelden</a>
+							<a href="javascript:openRegistration();void(0);" class="nav-register">Mitmachen</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+
+		<div id="hero-space" class="hero-space">
+			<div class="container sm-container">
+				<div class="row">
+					<div class="col-12">
+						<div>
+							<a >
+								<img src="images/em_bod_de.webp" class=" d-none d-md-block">
+                                <img src="images/em_bod_mob_de.webp"  class=" d-md-none d-block bg-mobile">
                             </a>
                         </div>
                     </div>
                     <div class="hero-offer">
-                                                    <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offer/offer_de.png?v=1720428655" class="offer">
-                                                <div class="buttons">
+                        <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offer/offer_de.png?v=1720428655" class="offer">
+                        <div class="buttons">
                             <a href="Javascript:openAuth();void(0);">
                                 <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/buttons/instant_play_de.png" class="instant">
                             </a>
-                            <!-- <a href="Javascript:downloadClient();void(0);">
-                                <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/buttons/download_de.png" class="download">
-                            </a> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="mobile-hero-space" class="mobile-hero-space" __cpp="1">
-        <div bootstrap-carousel="" no-pause="::hero.no_pause" active="hero.active" interval="hero.interval" class="hero-carousel carousel" template-url="/templates/carousel/carousel-no-control.html" __cpp="1" __cporiginalvalueofinnerhtml="<div class=&quot;carousel-inner&quot; ng-transclude ng-swipe-left=&quot;next()&quot; ng-swipe-right=&quot;prev()&quot;></div>"><div class="carousel-inner" ng-transclude="" ng-swipe-left="next()" ng-swipe-right="prev()" __cpp="1">
-            <!----><!----><div carousel-slide="" ng-repeat="banner in hero.banners track by $index" index="$index" ng-if="::(banner.creatives.mobile.type == 'image')" class="carousel-item item" __cpp="1" __cporiginalvalueofinnerhtml="<div class=&quot;text-center&quot; ng-transclude></div>
-" style=""><div class="text-center" ng-transclude="" __cpp="1">
-                <a banner-action="::(banner.ext_url || banner.action)" __cpp="1">
-                    <img ng-src="https://bnrs-cdn.image-tech-storage.com/api_ego/bod_em/euromania/em_bod_mob_de.jpg?v=1" class="img-fluid d-block mx-auto" __cpp="1" src="https://bnrs-cdn.image-tech-storage.com/api_ego/bod_em/euromania/em_bod_mob_de.jpg?v=1">
-                </a>
-                <!---->
-            </div>
-</div><!----><!----><!----><div carousel-slide="" ng-repeat="banner in hero.banners track by $index" index="$index" ng-if="::(banner.creatives.mobile.type == 'image')" class="carousel-item item active" __cpp="1" __cporiginalvalueofinnerhtml="<div class=&quot;text-center&quot; ng-transclude></div>
-" style=""><div class="text-center" ng-transclude="" __cpp="1">
-                <a banner-action="::(banner.ext_url || banner.action)" __cpp="1">
-                    <img ng-src="https://bnrs-cdn.image-tech-storage.com/api_ego/ninja_em/euromania/mobile_em_de.jpg?v=1" class="img-fluid d-block mx-auto" __cpp="1" src="https://bnrs-cdn.image-tech-storage.com/api_ego/ninja_em/euromania/mobile_em_de.jpg?v=1">
-                </a>
-                <!---->
-            </div>
-</div><!----><!----><!----><div carousel-slide="" ng-repeat="banner in hero.banners track by $index" index="$index" ng-if="::(banner.creatives.mobile.type == 'image')" class="carousel-item item" __cpp="1" __cporiginalvalueofinnerhtml="<div class=&quot;text-center&quot; ng-transclude></div>
-" style=""><div class="text-center" ng-transclude="" __cpp="1">
-                <a banner-action="::(banner.ext_url || banner.action)" __cpp="1">
-                    <img ng-src="https://bnrs-cdn.image-tech-storage.com/api_ego/valleyofgods_em/euromania/ValleyofGods_ms_de.jpg" class="img-fluid d-block mx-auto" __cpp="1" src="https://bnrs-cdn.image-tech-storage.com/api_ego/valleyofgods_em/euromania/ValleyofGods_ms_de.jpg">
-                </a>
-                <!---->
-            </div>
-</div><!----><!----><!----><div carousel-slide="" ng-repeat="banner in hero.banners track by $index" index="$index" ng-if="::(banner.creatives.mobile.type == 'image')" class="carousel-item item" __cpp="1" __cporiginalvalueofinnerhtml="<div class=&quot;text-center&quot; ng-transclude></div>
-" style=""><div class="text-center" ng-transclude="" __cpp="1">
-                <a banner-action="::(banner.ext_url || banner.action)" __cpp="1">
-                    <img ng-src="https://bnrs-cdn.image-tech-storage.com/api_ego/livecasino_em/euromania/em_live-casino_de.jpg" class="img-fluid d-block mx-auto" __cpp="1" src="https://bnrs-cdn.image-tech-storage.com/api_ego/livecasino_em/euromania/em_live-casino_de.jpg">
-                </a>
-                <!---->
-            </div>
-</div><!----><!---->
-        </div></div>
-    </section>
 
-<div class="container container-wrapper">
-        <div class="row">
-            <div class="col-12 col-lg-12 col-xl-12">
-            <p style="color: #FFF;border-bottom: 1px solid #FFF;padding: 9px;text-align: center;">Nur die erste Einzahlung. Min. Einzahlung: €10, max. Bonus €100. Spiel: Book of Dead, Spielwert: €0.10. Einsatzanforderung: Innerhalb von 30 Tagen 30 Mal den Einzahlungs- und Bonusbetrag und 60 Mal den Freispiel-Gewinnbetrag setzen (nur Spielautomaten zählen). Der maximale Einsatz sind 10% (min. €0,10) des Freispiel-Gewinnbetrags und Bonusbetrags oder €5 (geringster Betrag gilt). Die Spiele müssen verwendet bzw. der Bonus in Anspruch genommen werden, bevor das eingezahlte Guthaben genutzt wird. Einzahlungs-/ Willkommensboni dürfen nur einmal innerhalb von 72 Stunden bei allen Betreibern beansprucht werden. <a href="/bonus-policy/">Die allgemeinen Bonusregeln gelten.</a>.</p>
+
+        <div class="container container-wrapper">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xl-12">
+                    <p style="color: #FFF;border-bottom: 1px solid #FFF;padding: 9px;text-align: center;">Nur die erste Einzahlung. Min. Einzahlung: €10, max. Bonus €100. Spiel: Book of Dead, Spielwert: €0.10. Einsatzanforderung: Innerhalb von 30 Tagen 30 Mal den Einzahlungs- und Bonusbetrag und 60 Mal den Freispiel-Gewinnbetrag setzen (nur Spielautomaten zählen). Der maximale Einsatz sind 10% (min. €0,10) des Freispiel-Gewinnbetrags und Bonusbetrags oder €5 (geringster Betrag gilt). Die Spiele müssen verwendet bzw. der Bonus in Anspruch genommen werden, bevor das eingezahlte Guthaben genutzt wird. Einzahlungs-/ Willkommensboni dürfen nur einmal innerhalb von 72 Stunden bei allen Betreibern beansprucht werden. 
+                        <a href="/bonus-policy/">Die allgemeinen Bonusregeln gelten.</a>.
+                    </p>
+                </div>
             </div>
-        </div>
-    <div class="row">
-        <div class="col-12 col-lg-12 col-xl-9 mx-auto my-5">
-                        
-            <div class="home-offers">
-                                <div class="offer">
-                    <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/daily_picks_de.png" />
-                    <h3>Angebote des Tages</h3>
-                    <a href="/daily-picks/">WEITERE INFOS ANZEIGEN</a>
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xl-9 mx-auto my-5">
+                    <div class="home-offers">
+                        <div class="offer">
+                            <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/daily_picks_de.png" />
+                            <h3>Angebote des Tages</h3>
+                            <a href="/daily-picks/">WEITERE INFOS ANZEIGEN</a>
+                        </div>
+                        <div class="offer">
+                            <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/vip-lounge.jpg" />
+                            <h3>VIP-Lounge</h3>
+                            <a href="/vip/vip-lounge/">WEITERE INFOS ANZEIGEN</a>
+                        </div>
+                        <div class="offer">
+                            <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/new-games.jpg" />
+                            <h3>NEUE SPIELE</h3>
+                            <a href="/games/">WEITERE INFOS ANZEIGEN</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="offer">
-                    <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/vip-lounge.jpg" />
-                    <h3>VIP-Lounge</h3>
-                    <a href="/vip/vip-lounge/">WEITERE INFOS ANZEIGEN</a>
-                </div>
-                                <div class="offer">
-                    <img src="https://aws-origin.image-tech-storage.com/euromanias.de/images/home/offers/new-games.jpg" />
-                    <h3>NEUE SPIELE</h3>
-                    <a href="/games/">WEITERE INFOS ANZEIGEN</a>
-                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li>
+                                        <a href="http://affiliates.euromania.com">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="/privacy-policy/">Datenschutzerklärung</a>
+                                    </li>
+                                    <li>
+                                        <a href="/terms-and-conditions/">Allgemeine Geschäftsbedingungen</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about-us/">Über uns</a>
+                                    </li>
+                                    <li>
+                                        <a href="/responsible_gaming/">Verantwortungsbewusst Spielen</a>
+                                    </li>
+                                    <li>
+                                        <a href="/bonus-policy/">Bonusrichtlinie</a>
+                                    </li>
+                                </ul>
                             </div>
-    </div>
-</div>    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-menu">
-                        <ul>
-                            <li>
-                                <a href="http://affiliates.euromania.com">Partner</a> 
-                            </li>
-                            <li>
-                                <a href="/privacy-policy/">Datenschutzerklärung</a>
-                            </li>
-                             
-                            <li>
-                                <a href="/terms-and-conditions/">Allgemeine Geschäftsbedingungen</a>
-                            </li>
-                            <li>
-                                <a href="/about-us/">Über uns</a>
-                            </li>
-                            <li>
-                                <a href="/responsible_gaming/">Verantwortungsbewusst Spielen</a>
-                            </li>
-                            <li>
-                                <a href="/bonus-policy/">Bonusrichtlinie</a>
-                            </li>
-                        </ul>       
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="license">
-                        <div son-ce="son-license-text">Diese Seite wird von der Skill On Net Ltd, Office 1/5297 Level G, Quantum House, 75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, betrieben, deren Director (entspricht dem Geschäftsführer einer deutschen GmbH) Herr Kyriacos Kyriacou ist. Die Handelsregisternummer (Maltese Business Registry) lautet C 50024. Erreichbarkeit per Telefon: +49 (0)89 38034212 und per E-Mail: kontakt@drückglück.de Die Skill on Net Limited ist ein behördlich zugelassener Veranstalter von virtuellen Automatenspielen und steht unter der Aufsicht der <a href="https://www.gluecksspiel-behoerde.de/de/" target="_blank">Gemeinsamen Glücksspielbehörde der Länder</a>. Die Erlaubnis wurde am 29.12.22 erteilt, vgl. <a href="https://www.gluecksspiel-behoerde.de/de/erlaubnisfaehigesgluecksspiel/whitelist" target="_blank">WhiteList</a> <br><br><a href="https://son-direct.com/?appName=EuroMania.dl&langID=8&name=responsible_gaming" target="_blank">Glücksspiel kann süchtig machen. Bitte spiele verantwortungsvoll</a><br></div> 
- <son-beam style="--beam-background: transparent"></son-beam>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-logos">                        
-                        <son-license-logos image="light"></son-license-logos> 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-payments">
-                        <son-payments></son-payments>
-                        <p class="availabilty">Verfügbarkeit hängt von Ihrem Land ab</p>
-                    </div>
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="license">
+                                <div son-ce="son-license-text">Diese Seite wird von der Skill On Net Ltd, Office 1/5297 Level G, Quantum House, 75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, betrieben, deren Director (entspricht dem Geschäftsführer einer deutschen GmbH) Herr Kyriacos Kyriacou ist. Die Handelsregisternummer (Maltese Business Registry) lautet C 50024. Erreichbarkeit per Telefon: +49 (0)89 38034212 und per E-Mail: kontakt@drückglück.de Die Skill on Net Limited ist ein behördlich zugelassener Veranstalter von virtuellen Automatenspielen und steht unter der Aufsicht der 
+                                    <a href="https://www.gluecksspiel-behoerde.de/de/" target="_blank">Gemeinsamen Glücksspielbehörde der Länder</a>. Die Erlaubnis wurde am 29.12.22 erteilt, vgl. 
+                                    <a href="https://www.gluecksspiel-behoerde.de/de/erlaubnisfaehigesgluecksspiel/whitelist" target="_blank">WhiteList</a>
+                                    <br>
+                                        <br>
+                                            <a href="https://son-direct.com/?appName=EuroMania.dl&langID=8&name=responsible_gaming" target="_blank">Glücksspiel kann süchtig machen. Bitte spiele verantwortungsvoll</a>
+                                            <br>
+                                            </div>
+                                            <son-beam style="--beam-background: transparent"></son-beam>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="footer-logos">
+                                            <son-license-logos image="light"></son-license-logos>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="footer-payments">
+                                            <p class="availabilty">Verfügbarkeit hängt von Ihrem Land ab</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         </div>
-    </div>
-        <script type="text/javascript">
-var license_sid = {"Swedish":"5e5f5985c6b0a58c4086f59a4a6c3bf0","Malta":"b324989feed2d9c437accd085c432d5f","Spanish":"7a0d1add96c0bac91c1e75460479a377","UK":"1efe329408ff38ba4386b119368060f9","titanium":"b324989feed2d9c437accd085c432d5f"};
-var configObject = {
-					skin: "EuroMania",
-					domain: "euromanias.de",
-					license: "Malta",
-					smart_license: "Malta",
-					dynid: "no_zone",
-					license_sid: {"Swedish":"5e5f5985c6b0a58c4086f59a4a6c3bf0","Malta":"b324989feed2d9c437accd085c432d5f","Spanish":"7a0d1add96c0bac91c1e75460479a377","UK":"1efe329408ff38ba4386b119368060f9","titanium":"b324989feed2d9c437accd085c432d5f"},
-					lang: "de",
-					country: "FR",
-					region: "",
-					resDomain: "https://aws-origin.image-tech-storage.com/euromanias.de",
-					platform: "desktop",
-					userIsRegistered: false,
-					banners:{
-						url: 'https://promotions.safe-communication.com/herospace/',
-						position: 'hero',
-						platform: 2,
-						skin: "EuroMania",
-						lang_id: 8,
-    					affiliate: "house_nond",
-    					country: "FR"
-					},
-			        query: "",
-					gamesApi: "https://games.netdnstrace1.com?",
-					jackpotsApi: "https://service.safe-communication.com/jackpots/",
-					gamesUrl: "https://mobile.skilldnsproc.com/jsonDB/toBunddle/angular_games_malta_desktop.json?v="+Date.now(),
-					feed_url: "https://www.playeroffers.com/api.php",
-					payNPlay: (window.SON_CONFIG != undefined && window.SON_CONFIG.pnp != undefined ? (window.SON_CONFIG.pnp.enabled && window.SON_CONFIG.pnp.payments.length > 0) : false),
-					isBingo: false,
-					dev: false,
-langMap: {"de":"Deutsch"}
-				};
-</script>
-    <script type="text/javascript">
-        configObject.translations = {};
-        configObject.funPlayColor = "#2c3e8a";
-    </script>
-    <script type="text/javascript" src="https://aws-origin.image-tech-storage.com/euromanias.de/js/modules.min.js?v=1720428655" defer></script>
-    <script type="text/javascript" src="https://aws-origin.image-tech-storage.com/euromanias.de/js/app.min.js?v=1720428655" defer></script>
-
-    
-			<script>
-				if(top!=self) {
-					var today = new Date();
-					today.setMinutes(today.getMinutes() + 1440);
-					var UTCstring = today.toUTCString();
-
-					document.cookie = "Aname=; expires=" + today + "; path=/; domain=euromanias.de";
-					document.cookie = "Zone_id=; expires=" + today + "; path=/; domain=euromanias.de";
-					document.cookie = "Dyn_id=; expires=" + today + "; path=/; domain=euromanias.de";
-
-					setTimeout(function(){
-						top.__cpLocation.replace(document.__cpLocation);
-					}, 500);
-
-					//~ alert("For security reasons, framing is not allowed; click OK to remove the frames.");
-				}
-			</script>
-
-<script>
-checkMaint();
-function checkMaint() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj = JSON.parse(this.responseText);
-			if(typeof myObj.msg != "undefined") {
-				var maint = 'http://www.euromanias.de';
-				window.__cpLocation = maint.replace(/https:|http:/gi, "");
-			}
-		}
-	};
-	xhttp.open("GET", "https://maintenance.playeroffers.com/maintenance.php?site=euromanias.de&lang=de", true);
-	xhttp.send();
-}
-
-</script>
-
-				<script type="text/javascript">
-					(function(){
-				        var s1 = document.createElement("script"),
-				            s0 = document.getElementsByTagName("script")[0];
-				        s1.async = true;
-				        							s1.src = 'https://son-auth.netdnstrace1.com/api/'+window.SON_CONFIG.registration_token+'/config?lang=de&country=FR&region=';
-										        s1.charset = 'UTF-8';
-				        s0.parentNode.insertBefore(s1, s0);
-				    })();
-				</script>
-			
-<!-- Global site tag (gtag.js) - Google Tag Manager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45771219-17"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag("js", new Date());
-
-	gtag("config", "UA-45771219-17");
-</script>
-
-			
-    <noscript id="deferred-styles">
-        <link rel="stylesheet" type="text/css" href="https://aws-origin.image-tech-storage.com/euromanias.de/css/app.min.css?v=1720428655">
-    </noscript>
-    <script>
-        var loadDeferredStyles = function() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement)
-            addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
-    </script></body>
+	</body>
 </html>
