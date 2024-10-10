@@ -6693,9 +6693,8 @@ body.sidebar-menu-body-open:before {
   background-color: #2f44a9;
   border-color: #15a1fe;
 }
-.container-wrapper,
-.container-wrapper .container-background {
-  background-color: rgba(28, 62, 139, 0.2);
+.container-wrapper, .container-wrapper .container-background {
+  background-color: rgb(139 75 28 / 11%);
 }
 .container-wrapper {
   position: relative;
@@ -10312,4 +10311,61 @@ html.remodal-is-locked {
 }
 .authenticator.auth-desktop .auth-buttons {
   bottom: 50px !important;
+}
+
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: var(--license-logo-padding, 0);
+  margin: var(--license-logo-margin, 0);
+  background: var(--license-logo-background, transparent);
+  gap: 20px;
+}
+
+
+
+.dl-beam {
+  position: var(--beam-position, sticky);
+  z-index: var(--beam-index, 999);
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--beam-color, #fff);
+  font-size: var(--beam-font-size, 16px);
+  font-family: var(--beam-font-family, inherit);
+  background: var(--beam-background, #000);
+  padding: var(--beam-padding, 5px);
+}
+
+.dl-beam .container,
+.dl-beam .inner-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dl-beam .container {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dl-beam .text {
+  line-height: 1;
+  margin: 0 5px;
+}
+
+.dl-beam img {
+  display: block;
+}
+
+.dl-beam .flag-icon {
+  height: 25px;
 }
