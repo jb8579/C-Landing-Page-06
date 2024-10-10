@@ -102,7 +102,7 @@
             button {
                 margin-top: 20px;
                 padding: 10px;
-                background-color: #7a7a7a;
+                background-color: #303030;
                 color: white;
                 border: none;
                 cursor: pointer;
@@ -138,12 +138,12 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background-color: rgb(19, 19, 19);
-                border-radius: 8px;
+                background: #0377b4;
+                border-radius: 0px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 z-index: 9999;
                 text-align: center;
-                max-width: 550px;
+                max-width: 520px;
                 width: 100%;
             }
 
@@ -151,7 +151,7 @@
                 font-size: 16px;
                 color: #ffffff;
                 margin-bottom: 15px;
-                background: #4c4c4c;
+                background-color: #00548a;
                 padding: 18px;
                 text-align: left;
                 letter-spacing: 0.4px;
@@ -162,12 +162,12 @@
                 font-size: 16px;
                 color: #ffffff;
                 margin-bottom: 20px;
-                padding: 20px 40px 20px 40px;
+                padding: 20px 25px 10px 25px;
                 line-height: 30px;
             }
 
             .custom-alert button {
-                background: linear-gradient(342deg, #a54e07, #b47e11, #d1c05a, #bc881b, #a54e07);
+                background: rgb(6 6 6);
                 border: 0px !important;
                 color: white;
                 padding: 10px 12px;
@@ -216,7 +216,7 @@
         <div id="signUpModalDialog" class="modal-dialog hidden">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div>Willkommen bei EuroManial Handynummer</div>
+                    <div>Anmeldung: Handynummer- und Altersverifizierung</div>
                     <span class="close-icon" onclick="closeSignUp()"><img src="images/close.png" alt=""></span> <!-- Close Button -->
                 </div>
                 <div class="modal-body">
@@ -224,7 +224,7 @@
                         <label for="phone">Handynummer</label>
                         <input type="tel" id="phone" name="phone" placeholder="+49 (151) 12345678" required>
 
-                        <label for="dob">Warn hast du Geburtstag</label>
+                        <label for="dob">Wann hast du Geburtstag?</label>
                         <input type="date" id="dob" name="dob" required>
 
                         <button type="submit">WEITER</button>
