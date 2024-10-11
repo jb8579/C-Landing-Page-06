@@ -263,7 +263,6 @@
     <button onclick="closeAlert()">DANKE</button>
 </div>
 
-<!-- JavaScript for Modal Logic and Custom Alert -->
 <script>
     // Sign-Up Modal Logic
     function openSignUp() {
@@ -323,12 +322,15 @@
         const urlHash = window.location.hash;
         const urlPath = window.location.pathname;
 
-        // Open modal based on the URL
+        // Redirect to root page and open modal based on the URL
         if (urlHash === '#modal') {
+            // Use location.replace to change the URL without adding to history
             if (urlPath.includes('signup')) {
-                openSignUp();
+                window.location.href = '/';
+                setTimeout(openSignUp, 100); // Delay to ensure root page loads first
             } else if (urlPath.includes('login')) {
-                openLogin();
+                window.location.href = '/';
+                setTimeout(openLogin, 100); // Delay to ensure root page loads first
             } else {
                 window.location.href = '/'; // Redirect to root if not valid
             }
@@ -346,6 +348,7 @@
         }
     };
 </script>
+
 
 <!-- CSS remains the same -->
 
