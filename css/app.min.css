@@ -10406,7 +10406,7 @@ img {
 
 p.promotion-p {
   font-size: 15px;
-  padding: 0px 15px;
+  padding: 0px 60px;
   line-height: 25px;
 }
 
@@ -10451,4 +10451,11 @@ p.promotion-p {
 .ribbon > img{
   width: 60px;
   height: auto;
+}
+@media (max-width: 600px) {
+p.promotion-p {
+  font-size: 12px;
+  padding: 0px 15px;
+  line-height: 20px;
+}
 }
