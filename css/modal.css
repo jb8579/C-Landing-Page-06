@@ -1,9 +1,9 @@
 .modal-bg{
     background: #042d58;
-    padding: 40px;
+    padding: 60px;
 }
 
-.modal-content {
+.modal-content-sm {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     outline: 0;
 }
 
-.modal-header {
+.modal-header-sm {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -27,29 +27,32 @@
     background: #0377b4;
 }
 
-.modal-dialog {
+.modal-dialog-sm {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 490px;
+    margin: 0 auto;
 }
 
 label {
     font-size: 14px;
 }
 
-.modal-header {
+.modal-header-sm {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
+    padding: 1rem;
 }
 
 .close-icon {
     cursor: pointer;
 }
 
-.modal-body {
+.modal-body-sm {
     margin-top: 10px;
+    padding: 1rem;
 }
 
 .hidden {
