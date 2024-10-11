@@ -263,48 +263,47 @@
             <button onclick="closeAlert()">DANKE</button>
         </div>
     
-        <!-- JavaScript for Modal Logic and Custom Alert -->
-       <script>
-                    // Sign-Up Modal Logic
+        <script>
+            // Sign-Up Modal Logic
             function openSignUp() {
                 document.getElementById('signUpModalBackdrop').classList.remove('hidden');
                 document.getElementById('signUpModalDialog').classList.remove('hidden');
                 window.history.pushState(null, null, '/signup#modal');
             }
-
+        
             function closeSignUp() {
                 document.getElementById('signUpModalBackdrop').classList.add('hidden');
                 document.getElementById('signUpModalDialog').classList.add('hidden');
                 window.history.pushState(null, null, '/'); // Remove hash when closing
             }
-
+        
             // Handle sign-up form submission
             function submitSignUp(event) {
                 event.preventDefault(); // Prevents the form from reloading the page
                 showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
                 closeSignUp(); // Closes the sign-up modal after submission
             }
-
+        
             // Login Modal Logic
             function openLogin() {
                 document.getElementById('loginModalBackdrop').classList.remove('hidden');
                 document.getElementById('loginModalDialog').classList.remove('hidden');
                 window.history.pushState(null, null, '/login#modal');
             }
-
+        
             function closeLogin() {
                 document.getElementById('loginModalBackdrop').classList.add('hidden');
                 document.getElementById('loginModalDialog').classList.add('hidden');
                 window.history.pushState(null, null, '/'); // Remove hash when closing
             }
-
+        
             // Handle login form submission
             function submitLogin(event) {
                 event.preventDefault(); // Prevents the form from reloading the page
                 showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
                 closeLogin(); // Closes the login modal after submission
             }
-
+        
             // Custom Alert Logic
             function showAlert(title, message) {
                 document.getElementById('alertTitle').innerText = title;
@@ -312,12 +311,40 @@
                 document.getElementById('customAlertBackdrop').classList.remove('hidden');
                 document.getElementById('customAlert').classList.remove('hidden');
             }
-
+        
             function closeAlert() {
                 document.getElementById('customAlertBackdrop').classList.add('hidden');
                 document.getElementById('customAlert').classList.add('hidden');
             }
-       </script>
+        
+            // Check URL and open modal if needed
+            window.onload = function () {
+                const urlHash = window.location.hash;
+                const urlPath = window.location.pathname;
+        
+                // Check if the URL ends with #modal
+                if (urlHash === '#modal') {
+                    if (urlPath.includes('signup')) {
+                        // If it's signup, open the sign-up modal
+                        openSignUp();
+                    } else if (urlPath.includes('login')) {
+                        // If it's login, open the login modal
+                        openLogin();
+                    } else {
+                        // If the URL doesn't match known paths, redirect to the root
+                        window.location.href = '/'; // Redirect to root page
+                    }
+                } else {
+                    // Check if the URL is directly accessing a modal path
+                    if (urlPath.includes('signup') || urlPath.includes('login')) {
+                        window.location.href = '/'; // Redirect to root page
+                    }
+                }
+            };
+        </script>
+        
+        
+
 
 
 	    <div class="header-wrapper">
