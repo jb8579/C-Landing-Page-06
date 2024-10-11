@@ -210,140 +210,145 @@
  
     
     <body>
-        <!-- Sign-Up Modal -->
-        <div id="signUpModalBackdrop" class="modal-backdrop hidden"></div>
+       <!-- Sign-Up Modal -->
+<div id="signUpModalBackdrop" class="modal-backdrop hidden"></div>
 
-        <div id="signUpModalDialog" class="modal-dialog hidden">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>Anmeldung: Handynummer- und Altersverifizierung</div>
-                    <span class="close-icon" onclick="closeSignUp()"><img src="images/close.png" alt=""></span> <!-- Close Button -->
-                </div>
-                <div class="modal-body">
-                    <form id="signUpForm" onsubmit="submitSignUp(event)">
-                        <label for="phone">Handynummer</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+49 (151) 12345678" required>
+<div id="signUpModalDialog" class="modal-dialog hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>Anmeldung: Handynummer- und Altersverifizierung</div>
+            <span class="close-icon" onclick="closeSignUp()"><img src="images/close.png" alt=""></span> <!-- Close Button -->
+        </div>
+        <div class="modal-body">
+            <form id="signUpForm" onsubmit="submitSignUp(event)">
+                <label for="phone">Handynummer</label>
+                <input type="tel" id="phone" name="phone" placeholder="+49 (151) 12345678" required>
 
-                        <label for="dob">Wann hast du Geburtstag?</label>
-                        <input type="date" id="dob" name="dob" required>
+                <label for="dob">Wann hast du Geburtstag?</label>
+                <input type="date" id="dob" name="dob" required>
 
-                        <button type="submit">WEITER</button>
-                    </form>
-                </div>
-            </div>
+                <button type="submit">WEITER</button>
+            </form>
         </div>
-    
-        <!-- Login Modal -->
-        <div id="loginModalBackdrop" class="modal-backdrop hidden"></div>
-        <div id="loginModalDialog" class="modal-dialog hidden">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>Einloggen</div>
-                    <span class="close-icon" onclick="closeLogin()"><img src="images/close.png" alt=""></span> 
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm" onsubmit="submitLogin(event)">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="email" required>
-    
-                        <label for="password">Passwort</label>
-                        <input type="password" id="password" name="password" required>
-    
-                        <button type="submit" class="text-center my-4 mt-5">Einloggen</button>
-                    </form>
-                </div>
-            </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModalBackdrop" class="modal-backdrop hidden"></div>
+<div id="loginModalDialog" class="modal-dialog hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>Einloggen</div>
+            <span class="close-icon" onclick="closeLogin()"><img src="images/close.png" alt=""></span> 
         </div>
-    
-        <!-- Custom Alert -->
-        <div id="customAlertBackdrop" class="custom-alert-backdrop hidden"></div>
-        <div id="customAlert" class="custom-alert hidden">
-            <h2 id="alertTitle"></h2>
-            <p id="alertMessage"></p>
-            <button onclick="closeAlert()">DANKE</button>
+        <div class="modal-body">
+            <form id="loginForm" onsubmit="submitLogin(event)">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Passwort</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="text-center my-4 mt-5">Einloggen</button>
+            </form>
         </div>
-    
-        <script>
-            // Sign-Up Modal Logic
-            function openSignUp() {
-                document.getElementById('signUpModalBackdrop').classList.remove('hidden');
-                document.getElementById('signUpModalDialog').classList.remove('hidden');
-                window.history.pushState(null, null, '/signup#modal');
+    </div>
+</div>
+
+<!-- Custom Alert -->
+<div id="customAlertBackdrop" class="custom-alert-backdrop hidden"></div>
+<div id="customAlert" class="custom-alert hidden">
+    <h2 id="alertTitle"></h2>
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()">DANKE</button>
+</div>
+
+<!-- JavaScript for Modal Logic and Custom Alert -->
+<script>
+    // Sign-Up Modal Logic
+    function openSignUp() {
+        document.getElementById('signUpModalBackdrop').classList.remove('hidden');
+        document.getElementById('signUpModalDialog').classList.remove('hidden');
+        window.history.pushState(null, null, '/signup#modal');
+    }
+
+    function closeSignUp() {
+        document.getElementById('signUpModalBackdrop').classList.add('hidden');
+        document.getElementById('signUpModalDialog').classList.add('hidden');
+        window.history.pushState(null, null, '/'); // Remove hash when closing
+    }
+
+    // Handle sign-up form submission
+    function submitSignUp(event) {
+        event.preventDefault(); // Prevents the form from reloading the page
+        showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+        closeSignUp(); // Closes the sign-up modal after submission
+    }
+
+    // Login Modal Logic
+    function openLogin() {
+        document.getElementById('loginModalBackdrop').classList.remove('hidden');
+        document.getElementById('loginModalDialog').classList.remove('hidden');
+        window.history.pushState(null, null, '/login#modal');
+    }
+
+    function closeLogin() {
+        document.getElementById('loginModalBackdrop').classList.add('hidden');
+        document.getElementById('loginModalDialog').classList.add('hidden');
+        window.history.pushState(null, null, '/'); // Remove hash when closing
+    }
+
+    // Handle login form submission
+    function submitLogin(event) {
+        event.preventDefault(); // Prevents the form from reloading the page
+        showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+        closeLogin(); // Closes the login modal after submission
+    }
+
+    // Custom Alert Logic
+    function showAlert(title, message) {
+        document.getElementById('alertTitle').innerText = title;
+        document.getElementById('alertMessage').innerText = message;
+        document.getElementById('customAlertBackdrop').classList.remove('hidden');
+        document.getElementById('customAlert').classList.remove('hidden');
+    }
+
+    function closeAlert() {
+        document.getElementById('customAlertBackdrop').classList.add('hidden');
+        document.getElementById('customAlert').classList.add('hidden');
+    }
+
+    // Check URL on load to open modals if needed
+    window.onload = function () {
+        const urlHash = window.location.hash;
+        const urlPath = window.location.pathname;
+
+        // Open modal based on the URL
+        if (urlHash === '#modal') {
+            if (urlPath.includes('signup')) {
+                openSignUp();
+            } else if (urlPath.includes('login')) {
+                openLogin();
+            } else {
+                window.location.href = '/'; // Redirect to root if not valid
             }
-        
-            function closeSignUp() {
-                document.getElementById('signUpModalBackdrop').classList.add('hidden');
-                document.getElementById('signUpModalDialog').classList.add('hidden');
-                window.history.pushState(null, null, '/'); // Remove hash when closing
-            }
-        
-            // Handle sign-up form submission
-            function submitSignUp(event) {
-                event.preventDefault(); // Prevents the form from reloading the page
-                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
-                closeSignUp(); // Closes the sign-up modal after submission
-            }
-        
-            // Login Modal Logic
-            function openLogin() {
-                document.getElementById('loginModalBackdrop').classList.remove('hidden');
-                document.getElementById('loginModalDialog').classList.remove('hidden');
-                window.history.pushState(null, null, '/login#modal');
-            }
-        
-            function closeLogin() {
-                document.getElementById('loginModalBackdrop').classList.add('hidden');
-                document.getElementById('loginModalDialog').classList.add('hidden');
-                window.history.pushState(null, null, '/'); // Remove hash when closing
-            }
-        
-            // Handle login form submission
-            function submitLogin(event) {
-                event.preventDefault(); // Prevents the form from reloading the page
-                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
-                closeLogin(); // Closes the login modal after submission
-            }
-        
-            // Custom Alert Logic
-            function showAlert(title, message) {
-                document.getElementById('alertTitle').innerText = title;
-                document.getElementById('alertMessage').innerText = message;
-                document.getElementById('customAlertBackdrop').classList.remove('hidden');
-                document.getElementById('customAlert').classList.remove('hidden');
-            }
-        
-            function closeAlert() {
-                document.getElementById('customAlertBackdrop').classList.add('hidden');
-                document.getElementById('customAlert').classList.add('hidden');
-            }
-        
-            // Check URL and open modal if needed
-            window.onload = function () {
-                const urlHash = window.location.hash;
-                const urlPath = window.location.pathname;
-        
-                // Check if the URL ends with #modal
-                if (urlHash === '#modal') {
-                    if (urlPath.includes('signup')) {
-                        // If it's signup, open the sign-up modal
-                        openSignUp();
-                    } else if (urlPath.includes('login')) {
-                        // If it's login, open the login modal
-                        openLogin();
-                    } else {
-                        // If the URL doesn't match known paths, redirect to the root
-                        window.location.href = '/'; // Redirect to root page
-                    }
-                } else {
-                    // Check if the URL is directly accessing a modal path
-                    if (urlPath.includes('signup') || urlPath.includes('login')) {
-                        window.location.href = '/'; // Redirect to root page
-                    }
-                }
-            };
-        </script>
-        
-        
+        }
+    };
+
+    // Redirect for the modal hash when accessed directly
+    window.onpopstate = function(event) {
+        const urlPath = window.location.pathname;
+        if (urlPath === '/') {
+            // Do nothing, stay on the root page
+        } else {
+            // If on a modal page, redirect to root
+            window.location.href = '/';
+        }
+    };
+</script>
+
+<!-- CSS remains the same -->
+
 
 
 
