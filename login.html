@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+        
+        <!-- =============== Title & Favicon ================ -->
+        <title>Startseite - Euromanias</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- ================ Custom Links ================== -->
+        <link rel="stylesheet" href="css/app.min.css">
+        <link rel="stylesheet" href="css/modal.css">
+        <script src="js/main-ntv5Mj-4.js"></script>
+        <script src="js/modules.min.js"></script>
+        <script src="js/index.3a2e1388.js"></script>
+
+        <style>
+            body{
+                background-image: url('./images/body-bg.webp');
+                background-repeat: no-repeat;
+                width: 100%;
+                height: auto;
+                position: relative;
+                z-index: 1;
+                padding: 0px 0px 30px 0px;
+            }
+        </style>
+    </head>
+ 
+    
+    <body>
+	    <div class="header-wrapper">
+            <!-- ============== Top Germany Flag Area Start ============== -->
+		    <div class="dl-beam">
+                <div class="container">
+                    <div class="inner-container">
+                        <slot name="age-icon">
+                            <img alt="germany_flag" src="images/germany-flag.webp" class="flag-icon">
+                        </slot>
+                        <div class="text">Lizenziert in Deutschland</div>
+                    </div>
+                </div>
+			</div>
+            <!-- ============== Top Germany Flag Area End ============== -->
+
+
+            
+            <!-- ============== Header Nav Area Start ============== -->
+			<div class="header home">
+				<div class="container">
+					<div class="row align-items-center justify-content-between pl-4">
+						<div class="col-sm-4 col-lg-2">
+							<a class="support d-none d-lg-block">
+								<span class="green">24/7</span> Unterstützung                    
+							</a>
+						</div>
+
+						<div class="col-lg-3 justify-content-start d-none d-lg-flex"></div>
+
+						<div class="col-3 col-sm-3 col-lg-2">
+							<a class="logo" href="/">
+								<img src="images/logo_de.webp">
+							</a>
+						</div>
+
+						<div class="col-7 col-sm-5 col-lg-5 d-flex justify-content-end">
+							<a href="javascript:openLogin();void(0);" class="nav-login">Anmelden</a>
+							<a href="javascript:openRegistration();void(0);" class="nav-register">Mitmachen</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- ============== Header Nav Area End ============== -->
+        
+
+        
+        <!-- ================== Sub Page Context Start ================= -->
+        <div>
+            <h1 class="section-title container text-center pt-4" style="font-weight: 600;">Einloggen</h1>
+        </div>
+
+        <div class="container modal-bg my-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-wrapper">
+                        
+                        <!-- Login Modal -->
+                        <div id="loginModalDialog" class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>Einloggen</div>
+                                    <!-- <span class="close-icon" onclick="closeLogin()"><img src="images/close.png" alt=""></span>  -->
+                                </div>
+                                <div class="modal-body">
+                                    <form id="loginForm" onsubmit="submitLogin(event)">
+                                        <label for="email">E-Mail</label>
+                                        <input type="email" id="email" name="email" required>
+                    
+                                        <label for="password">Passwort</label>
+                                        <input type="password" id="password" name="password" required>
+                    
+                                        <button type="submit" class="text-center my-4 mt-5">Einloggen</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Custom Alert -->
+                        <div id="customAlertBackdrop" class="custom-alert-backdrop hidden"></div>
+                        <div id="customAlert" class="custom-alert hidden">
+                            <h2 id="alertTitle" class="alert-title"></h2>
+                            <p id="alertMessage" class="alert-message"></p>
+                            <button onclick="closeAlert()" class="alert-button">DANKE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- ================== Sub Page Context End ================= -->
+
+
+        <!-- ========================== Footer Section Start ====================== -->
+        <div class="footer">
+            <div class="container">
+
+                <!-- ==== Footer Nav Links ==== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-menu">
+                            <ul>
+                                <li>
+                                    <a href="privacy.html">Datenschutzerklärung</a>
+                                </li>
+                                <li>
+                                    <a href="terms-and-conditions.html">Allgemeine Geschäftsbedingungen</a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html">Über uns</a>
+                                </li>
+                                <li>
+                                    <a href="responsible_gaming.html">Verantwortungsbewusst Spielen</a>
+                                </li>
+                                <li>
+                                    <a href="bonus-policy.html">Bonusrichtlinie</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==== Footer Context ==== -->
+                <div class="row pt-5">
+                    <div class="col-12">
+                        <div class="license">
+                            <p>Diese Seite wird von der Skill On Net Ltd, Office 1/5297 Level G, Quantum House, 75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, betrieben, deren Director (entspricht dem Geschäftsführer einer deutschen GmbH) Herr Kyriacos Kyriacou ist. Die Handelsregisternummer (Maltese Business Registry) lautet C 50024. Erreichbarkeit per Telefon: +49 (0)89 38034212 und per E-Mail: kontakt@drückglück.de Die Skill on Net Limited ist ein behördlich zugelassener Veranstalter von virtuellen Automatenspielen und steht unter der Aufsicht der <a href="https://www.gluecksspiel-behoerde.de/de/" target="_blank">Gemeinsamen Glücksspielbehörde der Länder</a>. Die Erlaubnis wurde am 29.12.22 erteilt, vgl. <a href="https://www.gluecksspiel-behoerde.de/de/erlaubnisfaehigesgluecksspiel/whitelist" target="_blank">WhiteList</a> <br><br><a href="responsible_gaming.html">Glücksspiel kann süchtig machen. Bitte spiele verantwortungsvoll</a><br></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === Footer Partners Logos ==== -->
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <div class="footer-logos">
+                            <div class="logos">
+                                <a rel="nofollow" href="https://www.gluecksspiel-behoerde.de/de/erlaubnisfaehigesgluecksspiel/whitelist" style="width: 150px;"><img src="images/ggl.webp" class="lazyloaded"> </a>
+
+                                <a rel="nofollow" href="https://www.skillonnet.com/" style="width: 178px;"><img src="images/skillonnet.webp" class="lazyloaded"> </a>
+                                
+                                <a rel="nofollow" style="width: 45px;"><img src="images/18-footer.webp" class="lazyloaded"> </a>
+                                
+                                <a rel="nofollow" href="https://aws-origin.image-tech-storage.com/common/RNG_Certificate_SkillOnNet_MT.pdf" style="width: 115px;"><img src="images/iteclab.webp" class="lazyloaded"> </a>
+                                
+                                <a rel="nofollow" style="width: 126px;"><img src="images/securenet.webp"> </a>
+                                
+                                <a rel="nofollow" href="https://www.bundesweit-gegen-gluecksspielsucht.de/" style="width: 263px;"><img src="images/de-footer.webp" class="lazyloaded"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- === Footer Payment Logos ==== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-payments">
+                            <div class="logos">
+                                <img src="images/paysafe-card.png"  style="width: 190px;">
+                                <img src="images/skrill.png"  style="width: 90px;">
+                                <img src="images/mastercard.png"  style="width: 60px;">
+                                <img src="images/visa.png"  style="width: 90px;">
+                                <img src="images/apple-pay.png"  style="width: 105px;">
+                            </div>
+                            <p class="availabilty mt-5">Verfügbarkeit hängt von Ihrem Land ab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================== Footer Section End ====================== -->
+
+        <!-- JavaScript for Modal Logic and Custom Alert -->
+        <script>
+                // Sign-Up Modal Logic
+            function openSignUp() {
+                document.getElementById('signUpModalBackdrop').classList.remove('hidden');
+                document.getElementById('signUpModalDialog').classList.remove('hidden');
+                window.history.pushState(null, null, '/signup#modal');
+            }
+
+            function closeSignUp() {
+                document.getElementById('signUpModalBackdrop').classList.add('hidden');
+                document.getElementById('signUpModalDialog').classList.add('hidden');
+                window.history.pushState(null, null, '/'); // Remove hash when closing
+            }
+
+            // Handle sign-up form submission
+            function submitSignUp(event) {
+                event.preventDefault(); // Prevents the form from reloading the page
+                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+                closeSignUp(); // Closes the sign-up modal after submission
+            }
+
+            // Login Modal Logic
+            function openLogin() {
+                document.getElementById('loginModalBackdrop').classList.remove('hidden');
+                document.getElementById('loginModalDialog').classList.remove('hidden');
+                window.history.pushState(null, null, '/login#modal');
+            }
+
+            function closeLogin() {
+                document.getElementById('loginModalBackdrop').classList.add('hidden');
+                document.getElementById('loginModalDialog').classList.add('hidden');
+                window.history.pushState(null, null, '/'); // Remove hash when closing
+            }
+
+            // Handle login form submission
+            function submitLogin(event) {
+                event.preventDefault(); // Prevents the form from reloading the page
+                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+                closeLogin(); // Closes the login modal after submission
+            }
+
+            // Custom Alert Logic
+            function showAlert(title, message) {
+                document.getElementById('alertTitle').innerText = title;
+                document.getElementById('alertMessage').innerText = message;
+                document.getElementById('customAlertBackdrop').classList.remove('hidden');
+                document.getElementById('customAlert').classList.remove('hidden');
+            }
+
+            function closeAlert() {
+                document.getElementById('customAlertBackdrop').classList.add('hidden');
+                document.getElementById('customAlert').classList.add('hidden');
+            }
+        </script>
+    </body>
+</html>
