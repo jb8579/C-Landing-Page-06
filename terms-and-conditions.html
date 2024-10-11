@@ -25,11 +25,299 @@
                 z-index: 1;
                 padding: 0px 0px 30px 0px;
             }
+        </style><!-- ============= Modal CSS SIGNUP & LOGIN Start ============== -->
+        <style>
+             .modal-backdrop {
+                background-color: #000000e6;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9998;
+            }
+
+            .modal-content {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                pointer-events: auto;
+                background-color: #00548a;
+                background-clip: padding-box;
+                border: 0px;
+                border-radius: 0px;
+                outline: 0;
+            }
+
+            .modal-header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 1rem;
+                border-bottom: 0px;
+                border-top-left-radius: 0.3rem;
+                border-top-right-radius: 0.3rem;
+                background: #0377b4;
+            }
+
+            .modal-dialog {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                border-radius: 8px;
+                z-index: 9999;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                max-width: 490px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 15px;
+            }
+
+            .close-icon {
+                cursor: pointer;
+            }
+
+            .modal-body {
+                margin-top: 10px;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #303030;
+                color: white;
+                border: none;
+                cursor: pointer;
+                width: 200px;
+                border-radius: 4px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                outline: 0px !important;
+                border: 0px !important;
+            }
+
+            button:hover {
+                background-color: #020202;
+                border: 0px !important;
+            }
+
+            .custom-alert-backdrop {
+                background-color: #000000e6;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9998;
+            }
+
+            .custom-alert {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #0377b4;
+                border-radius: 0px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                text-align: center;
+                max-width: 520px;
+                width: 100%;
+            }
+
+            .custom-alert h2 {
+                font-size: 16px;
+                color: #ffffff;
+                margin-bottom: 15px;
+                background-color: #00548a;
+                padding: 18px;
+                text-align: left;
+                letter-spacing: 0.4px;
+                word-spacing: 1.4px;
+            }
+
+            .custom-alert p {
+                font-size: 16px;
+                color: #ffffff;
+                margin-bottom: 20px;
+                padding: 20px 25px 10px 25px;
+                line-height: 30px;
+            }
+
+            .custom-alert button {
+                background: rgb(6 6 6);
+                border: 0px !important;
+                color: white;
+                padding: 10px 12px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 4px;
+                position: unset;
+                transform: none;
+                margin-bottom: 40px;
+                outline: 0px !important;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            input {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                color: rgb(0 0 0 / 1) !important;
+                background: rgb(255 255 255 / 1);
+                border-radius: 4px;
+                border: 0px;
+                padding: 10px;
+                outline: 0px;
+                margin-bottom: 5px;
+            }
+
+            @media (max-width: 600px) {
+                .custom-alert p {
+                    margin-bottom: 20px;
+                    padding: 20px;
+                }
+            }
         </style>
+        <!-- ============= Modal CSS SIGNUP & LOGIN End ============== -->
     </head>
  
     
     <body>
+        <!-- Sign-Up Modal -->
+        <div id="signUpModalBackdrop" class="modal-backdrop hidden"></div>
+
+        <div id="signUpModalDialog" class="modal-dialog hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>Anmeldung: Handynummer- und Altersverifizierung</div>
+                    <span class="close-icon" onclick="closeSignUp()"><img src="images/close.png" alt=""></span> <!-- Close Button -->
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="submitSignUp(event)">
+                        <label for="phone">Handynummer</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 (151) 12345678" required>
+
+                        <label for="dob">Wann hast du Geburtstag?</label>
+                        <input type="date" id="dob" name="dob" required>
+
+                        <button type="submit">WEITER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Login Modal -->
+        <div id="loginModalBackdrop" class="modal-backdrop hidden"></div>
+        <div id="loginModalDialog" class="modal-dialog hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>Einloggen</div>
+                    <span class="close-icon" onclick="closeLogin()"><img src="images/close.png" alt=""></span> 
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" onsubmit="submitLogin(event)">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+    
+                        <label for="password">Passwort</label>
+                        <input type="password" id="password" name="password" required>
+    
+                        <button type="submit" class="text-center my-4 mt-5">Einloggen</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Custom Alert -->
+        <div id="customAlertBackdrop" class="custom-alert-backdrop hidden"></div>
+        <div id="customAlert" class="custom-alert hidden">
+            <h2 id="alertTitle"></h2>
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">DANKE</button>
+        </div>
+    
+        <!-- JavaScript for Modal Logic and Custom Alert -->
+       <script>
+                    // Sign-Up Modal Logic
+            function openSignUp() {
+                document.getElementById('signUpModalBackdrop').classList.remove('hidden');
+                document.getElementById('signUpModalDialog').classList.remove('hidden');
+                window.history.pushState(null, null, '/signup#modal');
+            }
+
+            function closeSignUp() {
+                document.getElementById('signUpModalBackdrop').classList.add('hidden');
+                document.getElementById('signUpModalDialog').classList.add('hidden');
+                window.history.pushState(null, null, '/'); // Remove hash when closing
+            }
+
+            // Handle sign-up form submission
+            function submitSignUp(event) {
+                event.preventDefault(); // Prevents the form from reloading the page
+                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+                closeSignUp(); // Closes the sign-up modal after submission
+            }
+
+            // Login Modal Logic
+            function openLogin() {
+                document.getElementById('loginModalBackdrop').classList.remove('hidden');
+                document.getElementById('loginModalDialog').classList.remove('hidden');
+                window.history.pushState(null, null, '/login#modal');
+            }
+
+            function closeLogin() {
+                document.getElementById('loginModalBackdrop').classList.add('hidden');
+                document.getElementById('loginModalDialog').classList.add('hidden');
+                window.history.pushState(null, null, '/'); // Remove hash when closing
+            }
+
+            // Handle login form submission
+            function submitLogin(event) {
+                event.preventDefault(); // Prevents the form from reloading the page
+                showAlert("Verifizieren Sie Ihr Mobilnummer", "Bitte verifizieren Ihre Anmeldung mit dem Link in der zugesandten SMS");
+                closeLogin(); // Closes the login modal after submission
+            }
+
+            // Custom Alert Logic
+            function showAlert(title, message) {
+                document.getElementById('alertTitle').innerText = title;
+                document.getElementById('alertMessage').innerText = message;
+                document.getElementById('customAlertBackdrop').classList.remove('hidden');
+                document.getElementById('customAlert').classList.remove('hidden');
+            }
+
+            function closeAlert() {
+                document.getElementById('customAlertBackdrop').classList.add('hidden');
+                document.getElementById('customAlert').classList.add('hidden');
+            }
+       </script>
+
+
 	    <div class="header-wrapper">
             <!-- ============== Top Germany Flag Area Start ============== -->
 		    <div class="dl-beam">
@@ -65,8 +353,8 @@
 						</div>
 
 						<div class="col-7 col-sm-5 col-lg-5 d-flex justify-content-end">
-							<a href="javascript:openLogin();void(0);" class="nav-login">Anmelden</a>
-							<a href="javascript:openRegistration();void(0);" class="nav-register">Mitmachen</a>
+                            <a href="javascript:void(0);" onclick="openLogin()"  class="nav-login">Anmelden</a>
+							<a href="javascript:void(0);" onclick="openSignUp()"  class="nav-register">Mitmachen</a>
 						</div>
 					</div>
 				</div>
